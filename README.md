@@ -23,7 +23,7 @@ An [Ansible](https://www.ansible.com) role to install/configure a [MariaDB-Galer
 
 ## Build Status
 
-[![Build Status](https://travis-ci.org/mrlesmithjr/ansible-mariadb-galera-cluster.svg?branch=master)](https://travis-ci.org/mrlesmithjr/ansible-mariadb-galera-cluster)
+[![Build Status](https://travis-ci.org/piwi3910/ansible-mariadb-galera-cluster.svg?branch=master)](https://travis-ci.org/piwi3910/ansible-mariadb-galera-cluster)
 
 ## Requirements
 
@@ -34,7 +34,7 @@ None
 Spin up a test 3-node cluster using Vagrant....
 
 ```bash
-git clone https://github.com/mrlesmithjr/ansible-mariadb-galera-cluster.git
+git clone https://github.com/piwi3910/ansible-mariadb-galera-cluster.git
 cd Vagrant
 vagrant up
 ```
@@ -49,11 +49,6 @@ When you are done testing tear it all down....
 
 [defaults/main.yml](defaults/main.yml)
 
-## Dependencies
-
-### Ansible roles
-
--   [ansible-etc-hosts](https://github.com/mrlesmithjr/ansible-etc-hosts)
 
 ## Example Playbook
 
@@ -61,12 +56,9 @@ When you are done testing tear it all down....
 
 ## License
 
-MIT
+GPL
 
 ## Author Information
 
-Larry Smith Jr.
-
--   @mrlesmithjr
--   <http://everythingshouldbevirtual.com>
--   mrlesmithjr [at] gmail.com
+Pascal Watteel
+-   pascal [at] watteel.be
