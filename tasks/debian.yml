@@ -9,14 +9,14 @@
 
 - name: debian | installing pre-reqs
   apt:
-    name: "{{ item }}"
+    name:
+      - 'apt-transport-https'
+      - 'software-properties-common'
+      - 'python-mysqldb'
+      - 'rsync'
     state: "present"
   become: true
-  with_items:
-    - 'apt-transport-https'
-    - 'software-properties-common'
-    - 'python-mysqldb'
-    - 'rsync'
+
 
 - name: debian | Adding MariaDB Repo Keys
   apt_key:
@@ -62,12 +62,10 @@
 
 - name: debian | installing mariadb-galera packages
   apt:
-    name: "{{ item }}"
+    name:
+      - 'mariadb-server'
     state: "present"
   become: true
-  with_items:
-    - 'mariadb-server'
-    # - 'galera-3'
   when: galera_enable_mariadb_repo == 'true'
 
 - name: debian | configuring root my.cnf
