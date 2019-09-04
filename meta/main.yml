@@ -26,3 +26,5 @@ galaxy_info:
     - galera
     - sql
   dependencies: []
+  travis_status_url: https://travis-ci.org/piwi3910/ansible-mariadb-galera-cluster.svg?branch=master
+
