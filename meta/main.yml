@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Pascal Watteel
-  description: An [Ansible](https://www.ansible.com) role to install/configure a [MariaDB-Galera Cluster](https://mariadb.com/kb/en/mariadb/what-is-mariadb-galera-cluster/)
+  description: An role to install/configure a MariaDB-Galera Cluster
   company: Dell Technologies
 
   license: GPL
