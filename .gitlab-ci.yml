@@ -1,6 +1,6 @@
 lint:
   image: centos:7
-  stage: lint
+  stage: test
   script:
     - yum install python3-pip -y
     - pip3 install ansible-lint
