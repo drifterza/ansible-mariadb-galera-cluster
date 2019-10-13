@@ -1,0 +1,9 @@
+lint:
+  image: centos:7
+  stage: lint
+  script:
+    - yum install python3-pip -y
+    - pip3 install ansible-lint
+    - ansible-lint *.yml
+  only:
+    - master
