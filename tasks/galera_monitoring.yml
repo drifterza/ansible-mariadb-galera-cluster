@@ -10,7 +10,8 @@
   register: galera_monitoring_updated
 
 - name: galera_monitoring | restarting mysql on master
-  notify: restart mysql
+  notify:
+    - restart mysql
   become: true
   when: >
         inventory_hostname == galera_mysql_master_node and
@@ -23,7 +24,8 @@
   when: inventory_hostname == galera_mysql_master_node
 
 - name: galera_monitoring | restarting mysql on additional servers
-  notify: restart mysql
+  notify:
+    - restart mysql
   become: true
   when: >
         inventory_hostname != galera_mysql_master_node and
