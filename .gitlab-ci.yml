@@ -1,7 +1,7 @@
 lint:
   image: gitlab.piwi.tk:4567/piwi3910/docker-lint-o-magic:latest
-    - name: lint-o-magic
-    - entrypoint: [""]
+      name: lint-o-magic
+      entrypoint: [""]
   stage: test
   script:
     - ls -lah
