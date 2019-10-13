@@ -1,9 +1,7 @@
 lint:
-  image: centos:7
+  image: gitlab.piwi.tk:4567/piwi3910/docker-lint-o-magic:latest
   stage: test
   script:
-    - yum install python3-pip -y
-    - pip3 install ansible-lint
-    - ansible-lint *.yml
+    - ansible-list playbook.yml
   only:
     - master
