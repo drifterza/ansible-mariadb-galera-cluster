@@ -2,6 +2,6 @@ lint:
   image: gitlab.piwi.tk:4567/piwi3910/docker-lint-o-magic:latest
   stage: test
   script:
-    - ansible-list playbook.yml
+    - ansible-lint playbook.yml
   only:
     - master
