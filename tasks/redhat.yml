@@ -9,6 +9,7 @@
     group: "root"
   become: true
   register: repo_added
+  when: galera_enable_mariadb_repo == 'true'
 
 - name: redhat | installing pre-reqs
   yum:
