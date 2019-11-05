@@ -42,6 +42,16 @@
   become: true
   when: mariadb_config_overrides is defined
 
+- name: redhat | installing mariadb mysql from Local Repo
+  yum:
+    name:
+      - 'mariadb-server'
+      - 'galera'
+    state: "present"
+  become: true
+  when: >
+        when: ansible_distribution != "Fedora" and galera_enable_mariadb_repo == 'false'
+
 - name: redhat | installing mariadb mysql
   yum:
     name:
