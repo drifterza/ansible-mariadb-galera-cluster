@@ -50,7 +50,7 @@
     state: "present"
   become: true
   when: >
-        ansible_distribution != "Fedora" and not not galera_enable_mariadb_repo
+        ansible_distribution != "Fedora" and not galera_enable_mariadb_repo
 
 - name: redhat | installing mariadb mysql
   yum:
@@ -61,6 +61,7 @@
   become: true
   when: >
         ansible_distribution != "Fedora" and galera_enable_mariadb_repo
+
 - name: redhat | installing mariadb mysql
   dnf:
     name:
