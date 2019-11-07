@@ -16,7 +16,7 @@
     name: MariaDB-10.2-local
     baseurl: "{ local_mirror }"
     gpgcheck: no
-    when: not galera_enable_mariadb_repo and local_mirror
+    when: local_mirror and not galera_enable_mariadb_repo
 
 - name: redhat | installing pre-reqs
   yum:
