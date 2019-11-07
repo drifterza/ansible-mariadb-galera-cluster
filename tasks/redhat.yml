@@ -9,7 +9,14 @@
     group: "root"
   become: true
   register: repo_added
-  when: galera_enable_mariadb_repo == 'true'
+  when: galera_enable_mariadb_repo
+
+- name: redhat | adding mariadb repo
+  yum_repository:
+    name: MariaDB-10.2-local
+    baseurl: "{ local_mirror }"
+    gpgcheck: no
+    when: not galera_enable_mariadb_repo and local_mirror
 
 - name: redhat | installing pre-reqs
   yum:
@@ -42,16 +49,6 @@
   become: true
   when: mariadb_config_overrides is defined
 
-- name: redhat | installing mariadb mysql from Local Repo
-  yum:
-    name:
-      - 'mariadb-server'
-      - 'galera'
-    state: "present"
-  become: true
-  when: >
-        ansible_distribution != "Fedora" and not galera_enable_mariadb_repo
-
 - name: redhat | installing mariadb mysql
   yum:
     name:
@@ -60,7 +57,7 @@
     state: "present"
   become: true
   when: >
-        ansible_distribution != "Fedora" and galera_enable_mariadb_repo
+        ansible_distribution != "Fedora"
 
 - name: redhat | installing mariadb mysql
   dnf:

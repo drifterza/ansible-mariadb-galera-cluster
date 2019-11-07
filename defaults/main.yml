@@ -1,6 +1,8 @@
 ---
 # defaults file for ansible-mariadb-galera-cluster
 
+local_mirror:
+
 # Define the cacti user info for cacti db monitoring - If used. May remove later.
 cacti_db_password: 'cactiuser'
 cacti_db_user: 'cactiuser'
