@@ -9,6 +9,14 @@
     group: "root"
   become: true
   register: repo_added
+  when: galera_enable_mariadb_repo
+
+- name: redhat | adding mariadb repo
+  yum_repository:
+    name: MariaDB-10.2-local
+    baseurl: "{ local_mirror }"
+    gpgcheck: no
+    when: local_mirror and not galera_enable_mariadb_repo
 
 - name: redhat | installing pre-reqs
   yum:
